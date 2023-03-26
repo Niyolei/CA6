@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
 
@@ -62,6 +61,31 @@ public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
 
     @Override
     public boolean insertChampion(Champion c) throws DAOexception {
-        return false;
+        Connection con = null;
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try{
+            con = this.getConnection();
+            String query = "INSERT INTO champion (id, name, role, difficulty) VALUES (?, ?, ?, ?)";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getName());
+            ps.setString(3, c.getRole());
+            ps.setDouble(4, c.getWinRate());
+            result = ps.executeUpdate();
+        } catch (Exception e) {
+            throw new DAOexception("insertChampion() " + e.getMessage());
+        } finally {
+            try{
+                if(ps != null){
+                    ps.close();
+                }
+                this.freeConnection(con);
+            } catch (Exception e) {
+                throw new DAOexception("insertChampion() " + e.getMessage());
+            }
+        }
+        return result == 1;
     }
 }
