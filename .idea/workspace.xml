@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74624b-b784-4d44-be5b-d3b55f2fb56c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/LocalMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/dkit/gd2/dominikHampejs/ChampionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Champion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;0d570cb2-96df-43cc-80da-7f777e6d0afe&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LocalMenu">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.App" />
       <module name="Project_CA6" />
@@ -56,6 +58,50 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.LocalMenu" />
+      <module name="Project_CA6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChampionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_CA6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dkit.gd2.dominikHampejs" />
+      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.ChampionTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChampionTests.findAllChampionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_CA6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dkit.gd2.dominikHampejs" />
+      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.ChampionTests" />
+      <option name="METHOD_NAME" value="findAllChampionsTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -75,6 +121,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LocalMenu" />
+        <item itemvalue="JUnit.ChampionTests" />
+        <item itemvalue="JUnit.ChampionTests.findAllChampionsTest" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>

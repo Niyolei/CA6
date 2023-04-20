@@ -38,4 +38,12 @@ public class Champion {
                 ", winRate=" + winRate +
                 '}';
     }
+
+    public boolean equals(Object o){
+        if(o instanceof Champion){
+            Champion c = (Champion) o;
+            return this.id == c.id && this.name.equals(c.name) && this.role.equals(c.role) && this.winRate == c.winRate;
+        }
+        return false;
+    }
 }
