@@ -2,6 +2,7 @@ package com.dkit.gd2.dominikHampejs.DAO;
 
 import com.dkit.gd2.dominikHampejs.DTO.Champion;
 import com.dkit.gd2.dominikHampejs.Exceptions.DAOexception;
+import com.google.gson.Gson;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -204,5 +205,19 @@ public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
             }
         }
         return champions;
+    }
+
+    @Override
+    public String findAllChampionsAsJSON() throws DAOexception{
+        List<Champion> champions = findAllChampions();
+        Gson gson = new Gson();
+        return gson.toJson(champions);
+    }
+
+    @Override
+    public String findChampionByIdAsJSON(int id) throws DAOexception{
+        Champion c = findChampionById(id);
+        Gson gson = new Gson();
+        return gson.toJson(c);
     }
 }
