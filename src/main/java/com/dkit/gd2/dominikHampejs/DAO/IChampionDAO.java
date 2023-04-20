@@ -10,4 +10,5 @@ public interface IChampionDAO {
     Champion findChampionById(int id) throws DAOexception;
     boolean deleteChampion(int id) throws DAOexception;
     boolean insertChampion(Champion c) throws DAOexception;
+    List<Champion> findChampionsByRole(String role) throws DAOexception;
 }
