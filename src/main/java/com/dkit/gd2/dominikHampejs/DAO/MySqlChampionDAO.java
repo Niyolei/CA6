@@ -86,7 +86,7 @@ public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
                 if (rs.next()) {
                     String name = rs.getString("name");
                     String role = rs.getString("role");
-                    double winRate = rs.getDouble("winRate");
+                    double winRate = rs.getDouble("win_rate");
                     c = new Champion(id, name, role, winRate);
                 }
             } catch (Exception e) {
