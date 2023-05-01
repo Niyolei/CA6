@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74624b-b784-4d44-be5b-d3b55f2fb56c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Build.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlBuildDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IChampionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IChampionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
