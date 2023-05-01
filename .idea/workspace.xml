@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74624b-b784-4d44-be5b-d3b55f2fb56c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/CommandFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/FindById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/QuitCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/UnknownCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Server/ServerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/addChampionCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/allChampionsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/deleteChampionCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/FindById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/championByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Champion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/domin/OneDrive/Desktop/Programming/Project_CA6",
     "settings.editor.selected.configurable": "0d570cb2-96df-43cc-80da-7f777e6d0afe"
   }
 }]]></component>
@@ -65,7 +63,7 @@
       <recent name="com.dkit.gd2.dominikHampejs.Commands" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.App" />
       <module name="Project_CA6" />

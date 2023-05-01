@@ -146,12 +146,11 @@ public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
 
         try{
             con = this.getConnection();
-            String query = "INSERT INTO champion (id, name, role, difficulty) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO champion (name, role, win_rate) VALUES (?, ?, ?)";
             ps = con.prepareStatement(query);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getName());
-            ps.setString(3, c.getRole());
-            ps.setDouble(4, c.getWinRate());
+            ps.setString(1, c.getName());
+            ps.setString(2, c.getRole());
+            ps.setDouble(3, c.getWinRate());
             result = ps.executeUpdate();
         } catch (Exception e) {
             throw new DAOexception("insertChampion() " + e.getMessage());

@@ -38,4 +38,8 @@ public class Champion {
                 ", winRate=" + winRate +
                 '}';
     }
+
+    public void printChampion() {
+        System.out.printf("%-5d %-15s %-15s %-15.2f\n", id, name, role, winRate);
+    }
 }

@@ -5,13 +5,13 @@ import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
 import com.dkit.gd2.dominikHampejs.DTO.Champion;
 import com.dkit.gd2.dominikHampejs.Exceptions.DAOexception;
-import com.google.gson.Gson;
 
 import java.util.Scanner;
 
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getChampionFromJson;
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getIdInput;
 
-public class FindById implements Command{
+public class championByIdCommand implements Command{
     @Override
     public String generateResponse(String[] commandParts) {
         MySqlChampionDAO championDAO = new MySqlChampionDAO();
@@ -28,27 +28,22 @@ public class FindById implements Command{
 
     @Override
     public String generateRequest(Scanner keyboard) {
-        StringBuilder commandToBuild = new StringBuilder();
-
-        System.out.println(Color.GREEN + "Enter the id of the champion you want to find: " + Color.RESET);
+        System.out.print(Color.GREEN + "Enter the id of the champion you want to find: " + Color.RESET);
         int id = getIdInput(keyboard);
 
-        commandToBuild.append(ServerDetails.BYID_COMMAND);
-        commandToBuild.append(ServerDetails.BREAKING_CHARACTER);
-        commandToBuild.append(id);
-
-        return commandToBuild.toString();
+        return ServerDetails.CHAMPIONBYID_COMMAND + ServerDetails.BREAKING_CHARACTER + id;
     }
 
     @Override
     public void handleResponse(String response) {
-        Gson gson = new Gson();
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
 
-        Champion champion = gson.fromJson(response, Champion.class);
+        Champion champion = getChampionFromJson(response);
 
-        if (champion != null)
-            System.out.println(champion);
+        if (champion != null) {
+            System.out.printf("%-6s%-16s%-15s%-14s\n", "ID", "Name", "Role", "Win rate");
+            champion.printChampion();
+        }
         else
             System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
     }
