@@ -5,7 +5,11 @@ import com.google.gson.Gson;
 
 import java.util.Scanner;
 
+import static java.lang.String.format;
+
 public class ServerUtility {
+
+    public static final String CHAMPION_HEADER = format("%-6s%-16s%-15s%-14s\n", "ID", "Name", "Role", "Win rate");
     public static int getIntInput(Scanner keyboard) {
         int choice = -1;
         try{
@@ -33,9 +37,73 @@ public class ServerUtility {
         return choice;
     }
 
+
+    public static String getChampionNameInput(Scanner keyboard) {
+        String name = "";
+        while (name.length() < 2){
+            try{
+                name = keyboard.nextLine();
+            }
+            catch (Exception e){
+                System.out.println(Color.RED + "Invalid input, enter a valid name." + Color.RESET);
+            }
+        }
+        return name;
+    }
+
+    public static String getChampionRoleInput(Scanner keyboard) {
+        printRoles();
+        int choice = getIntInput(keyboard);
+        String role = "";
+        switch (choice) {
+            case 1 -> role = "Tank";
+            case 2 -> role = "Fighter";
+            case 3 -> role = "Mage";
+            case 4 -> role = "Assassin";
+            case 5 -> role = "Marksman";
+            case 6 -> role = "Support";
+            default -> {
+                System.out.println(Color.RED + "Invalid input, enter a valid role." + Color.RESET);
+                role = getChampionRoleInput(keyboard);
+            }
+        }
+
+        return role;
+    }
+
+    private static void printRoles() {
+        System.out.println(Color.BLUE + "1. Tank");
+        System.out.println("2. Fighter");
+        System.out.println("3. Mage");
+        System.out.println("4. Assassin");
+        System.out.println("5. Marksman");
+        System.out.println("6. Support" + Color.RESET);
+        System.out.print(Color.GREEN + "Select a role:" + Color.RESET);
+    }
+
+    public static double getChampionWinRateInput(Scanner keyboard) {
+        double winRate = -1;
+        while (winRate < 0 || winRate > 100){
+            try{
+                winRate = keyboard.nextDouble();
+            }
+            catch (Exception e){
+                System.out.println(Color.RED + "Invalid input, enter a valid win rate." + Color.RESET);
+            }
+        }
+        return winRate;
+    }
+
     public static Champion getChampionFromJson(String json){
         Gson gson = new Gson();
         return gson.fromJson(json, Champion.class);
     }
+
+    public static String getJsonFromChampion(Champion champion){
+        Gson gson = new Gson();
+        return gson.toJson(champion);
+    }
+
+
 
 }

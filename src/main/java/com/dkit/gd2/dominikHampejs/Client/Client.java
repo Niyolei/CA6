@@ -16,8 +16,7 @@ import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getIntInput;
 
 public class Client {
     public static void main(String[] args) {
-        try {
-            Socket socket = new Socket("localhost", ServerDetails.SERVER_PORT);
+        try (Socket socket = new Socket("localhost", ServerDetails.SERVER_PORT)){
             System.out.println("Connected to server on port " + ServerDetails.SERVER_PORT);
 
             PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
@@ -34,19 +33,16 @@ public class Client {
                 printMenu();
                 choice = getIntInput(keyboard);
 
-                switch (choice){
-                    case 0:
-                        command = ServerDetails.QUIT_COMMAND;
-                        break;
-                    case 1:
-                        command = ServerDetails.BYID_COMMAND;
-                        break;
-                    case 2:
-                        System.out.println("I am just a placeholder for now");
-                        break;
-                    default:
+                switch (choice) {
+                    case 0 -> command = ServerDetails.QUIT_COMMAND;
+                    case 1 -> command = ServerDetails.CHAMPIONBYID_COMMAND;
+                    case 2 -> command = ServerDetails.ALLCHAMPIONS_COMMAND;
+                    case 3 -> command = ServerDetails.ADDCHAMPION_COMMAND;
+                    case 4 -> command = ServerDetails.DELETECHAMPION_COMMAND;
+                    default -> {
                         System.out.println("Not on the Menu");
                         continue;
+                    }
                 }
 
                 Command c = commandFactory.getCommand(command);
@@ -74,7 +70,9 @@ public class Client {
     private static void printMenu() {
         System.out.println(Color.BLUE +"\n0. Quit");
         System.out.println("1. Get Champion by ID");
-        System.out.println("2. Placeholder");
+        System.out.println("2. Get All Champions");
+        System.out.println("3. Add Champion");
+        System.out.println("4. Delete Champion");
         System.out.print(Color.GREEN + "Enter your choice: " + Color.RESET);
     }
 
