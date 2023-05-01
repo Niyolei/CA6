@@ -8,8 +8,7 @@ import com.dkit.gd2.dominikHampejs.Exceptions.DAOexception;
 
 import java.util.Scanner;
 
-import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getChampionFromJson;
-import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getIdInput;
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
 public class championByIdCommand implements Command{
     @Override
@@ -41,7 +40,8 @@ public class championByIdCommand implements Command{
         Champion champion = getChampionFromJson(response);
 
         if (champion != null) {
-            System.out.printf("%-6s%-16s%-15s%-14s\n", "ID", "Name", "Role", "Win rate");
+            System.out.println("Champion found successfully");
+            System.out.printf(CHAMPION_HEADER);
             champion.printChampion();
         }
         else

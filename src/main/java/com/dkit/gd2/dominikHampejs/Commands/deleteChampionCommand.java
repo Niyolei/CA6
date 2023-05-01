@@ -3,8 +3,11 @@ package com.dkit.gd2.dominikHampejs.Commands;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
+import com.dkit.gd2.dominikHampejs.DTO.Champion;
 
 import java.util.Scanner;
+
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
 public class deleteChampionCommand implements Command{
 
@@ -14,8 +17,9 @@ public class deleteChampionCommand implements Command{
         int id = Integer.parseInt(commandParts[1]);
 
         try {
+            Champion champion = dao.findChampionById(id);
             if(dao.deleteChampion(id)){
-                return "Champion deleted";
+                return getJsonFromChampion(champion);
             }
             else{
                 return "Champion unable to delete";
@@ -36,7 +40,15 @@ public class deleteChampionCommand implements Command{
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        System.out.println(response);
+        Champion champion = getChampionFromJson(response);
+        if(champion != null){
+            System.out.println("Champion deleted successfully");
+            System.out.printf(CHAMPION_HEADER);
+            champion.printChampion();
+        }
+        else{
+            System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
+        }
 
     }
 }

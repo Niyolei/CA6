@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.CHAMPION_HEADER;
+
 public class allChampionsCommand implements Command{
 
     @Override
@@ -43,7 +45,8 @@ public class allChampionsCommand implements Command{
         if (champions.size() == 0)
             System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
         else {
-            System.out.printf("%-6s%-16s%-15s%-14s\n", "ID", "Name", "Role", "Win rate");
+            System.out.println("Champions found successfully");
+            System.out.printf(CHAMPION_HEADER);
             for (Champion champion : champions)
                 champion.printChampion();
         }

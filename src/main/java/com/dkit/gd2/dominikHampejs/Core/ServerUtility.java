@@ -5,7 +5,11 @@ import com.google.gson.Gson;
 
 import java.util.Scanner;
 
+import static java.lang.String.format;
+
 public class ServerUtility {
+
+    public static final String CHAMPION_HEADER = format("%-6s%-16s%-15s%-14s\n", "ID", "Name", "Role", "Win rate");
     public static int getIntInput(Scanner keyboard) {
         int choice = -1;
         try{
@@ -74,7 +78,7 @@ public class ServerUtility {
         System.out.println("4. Assassin");
         System.out.println("5. Marksman");
         System.out.println("6. Support" + Color.RESET);
-        System.out.println(Color.GREEN + "Select a role:" + Color.RESET);
+        System.out.print(Color.GREEN + "Select a role:" + Color.RESET);
     }
 
     public static double getChampionWinRateInput(Scanner keyboard) {
@@ -93,6 +97,11 @@ public class ServerUtility {
     public static Champion getChampionFromJson(String json){
         Gson gson = new Gson();
         return gson.fromJson(json, Champion.class);
+    }
+
+    public static String getJsonFromChampion(Champion champion){
+        Gson gson = new Gson();
+        return gson.toJson(champion);
     }
 
 
