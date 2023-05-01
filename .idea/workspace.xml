@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74624b-b784-4d44-be5b-d3b55f2fb56c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Build.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/addChampionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/addChampionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/allChampionsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/allChampionsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/championByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/championByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/deleteChampionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/deleteChampionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IChampionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IChampionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlChampionDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -44,15 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/domin/OneDrive/Desktop/Programming/Project_CA6",
-    "settings.editor.selected.configurable": "0d570cb2-96df-43cc-80da-7f777e6d0afe"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/domin/OneDrive/Desktop/Programming/Project_CA6&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;0d570cb2-96df-43cc-80da-7f777e6d0afe&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dkit.gd2.dominikHampejs.Commands" />
