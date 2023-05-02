@@ -41,6 +41,7 @@ public class Client {
                     case 0 -> command = ServerDetails.QUIT_COMMAND;
                     case 1 -> menu = ServerDetails.CHAMPION_MENU;
                     case 2 -> menu = ServerDetails.ITEM_MENU;
+                    case 3 -> menu = ServerDetails.BUILD_MENU;
                     default -> {
                         System.out.println("Not on the Menu");
                         continue;
@@ -83,6 +84,7 @@ public class Client {
         System.out.println("0. Quit");
         System.out.println("1. Champion Menu");
         System.out.println("2. Item Menu");
+        System.out.println("3. Build Menu" + Color.RESET);
         System.out.print(Color.GREEN + "Enter your choice: " + Color.RESET);
     }
 

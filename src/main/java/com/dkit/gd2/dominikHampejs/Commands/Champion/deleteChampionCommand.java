@@ -34,22 +34,25 @@ public class deleteChampionCommand implements Command {
     @Override
     public String generateRequest(Scanner keyboard) {
         System.out.print(Color.GREEN + "Enter the ID of the champion you wish to delete: " + Color.RESET);
-        int id = keyboard.nextInt();
+        int id = getIdInput(keyboard);
         return ServerDetails.DELETECHAMPION_COMMAND + ServerDetails.BREAKING_CHARACTER + id;
     }
 
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Champion champion = getChampionFromJson(response);
-        if(champion != null){
-            System.out.println("Champion deleted successfully");
-            System.out.printf(CHAMPION_HEADER);
-            champion.printChampion();
+        try {
+            Champion champion = getChampionFromJson(response);
+            if (champion != null) {
+                System.out.println("Champion deleted successfully");
+                System.out.printf(CHAMPION_HEADER);
+                champion.printChampion();
+            } else {
+                System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
+            }
         }
-        else{
-            System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
+        catch (Exception e){
+            System.out.println(response);
         }
-
     }
 }

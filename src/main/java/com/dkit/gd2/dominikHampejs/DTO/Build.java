@@ -29,6 +29,6 @@ public class Build {
     }
 
     public void printBuild() {
-        System.out.printf("%-5d %-15d %-15s\n", championId, itemId, explanation);
+        System.out.printf("Champion ID: %-5d Item ID: %-5d Explanation: %-15s\n", championId, itemId, explanation);
     }
 }

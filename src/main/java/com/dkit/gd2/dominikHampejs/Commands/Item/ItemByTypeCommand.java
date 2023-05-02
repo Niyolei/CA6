@@ -39,16 +39,21 @@ public class ItemByTypeCommand implements Command {
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        List<Item> items = getItemsFromJson(response);
+        try {
 
-        if(items != null){
-            System.out.printf(ITEM_HEADER);
-            for(Item item : items){
-                item.printItem();
+            List<Item> items = getItemsFromJson(response);
+
+            if (items != null) {
+                System.out.printf(ITEM_HEADER);
+                for (Item item : items) {
+                    item.printItem();
+                }
+            } else {
+                System.out.println(Color.RED + "Error: Items not found" + Color.RESET);
             }
         }
-        else{
-            System.out.println(Color.RED + "Error: Items not found" + Color.RESET);
+        catch (Exception e) {
+            System.out.println(response);
         }
     }
 }

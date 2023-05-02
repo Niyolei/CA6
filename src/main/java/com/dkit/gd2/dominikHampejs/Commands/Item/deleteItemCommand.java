@@ -32,30 +32,29 @@ public class deleteItemCommand implements Command {
 
     @Override
     public String generateRequest(Scanner keyboard) {
-        int championId = 0;
         int itemId = 0;
 
-        System.out.print("Enter the ID of the champion you wish to delete an item from: ");
-        championId = getIntInput(keyboard);
-        System.out.print("Enter the ID of the item you wish to delete: ");
-        itemId = getIntInput(keyboard);
+        System.out.print(Color.GREEN + "Enter the ID of the item you wish to delete: " + Color.RESET);
+        itemId = getIdInput(keyboard);
 
-       return ServerDetails.DELETEITEM_COMMAND + ServerDetails.BREAKING_CHARACTER + championId + ServerDetails.BREAKING_CHARACTER + itemId;
+       return ServerDetails.DELETEITEM_COMMAND + ServerDetails.BREAKING_CHARACTER + itemId;
     }
 
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Item item = getItemFromJson(response);
-        if(item != null){
-            System.out.println("Item deleted successfully");
-            System.out.printf(ITEM_HEADER);
-            item.printItem();
+        try {
+            Item item = getItemFromJson(response);
+            if (item != null) {
+                System.out.println("Item deleted successfully");
+                System.out.printf(ITEM_HEADER);
+                item.printItem();
+            } else {
+                System.out.println(Color.RED + "Error: Item not found" + Color.RESET);
+            }
         }
-        else{
-            System.out.println(Color.RED + "Error: Item not found" + Color.RESET);
+        catch (Exception e){
+            System.out.println(response);
         }
-
-
     }
 }

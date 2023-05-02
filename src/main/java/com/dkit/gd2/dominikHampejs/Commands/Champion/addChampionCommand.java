@@ -53,12 +53,18 @@ public class addChampionCommand implements Command {
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Champion champion = getChampionFromJson(response);
-        if (champion != null) {
-            System.out.println("Champion added successfully!");
-            System.out.printf(CHAMPION_HEADER);
-            champion.printChampion();
-        } else {
+        try {
+
+            Champion champion = getChampionFromJson(response);
+            if (champion != null) {
+                System.out.println("Champion added successfully!");
+                System.out.printf(CHAMPION_HEADER);
+                champion.printChampion();
+            } else {
+                System.out.println(response);
+            }
+        }
+        catch (Exception e){
             System.out.println(response);
         }
     }

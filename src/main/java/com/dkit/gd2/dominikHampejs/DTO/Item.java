@@ -41,6 +41,6 @@ public class Item {
     }
 
     public void printItem(){
-        System.out.printf("%-6d %-15s %-15d %-15s %-15s\n", id, name, price, type, description);
+        System.out.printf("%-6d%-30s%-10d%-20s%-15s\n", id, name, price, type, description);
     }
 }

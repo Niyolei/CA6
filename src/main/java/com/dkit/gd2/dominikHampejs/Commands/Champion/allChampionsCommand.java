@@ -39,15 +39,20 @@ public class allChampionsCommand implements Command {
     @Override
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        List<Champion> champions = getChampionsFromJson(response);
+        try {
+            List<Champion> champions = getChampionsFromJson(response);
 
-        if (champions.size() == 0)
-            System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
-        else {
-            System.out.println("Champions found successfully");
-            System.out.printf(CHAMPION_HEADER);
-            for (Champion champion : champions)
-                champion.printChampion();
+            if (champions.size() == 0)
+                System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
+            else {
+                System.out.println("Champions found successfully");
+                System.out.printf(CHAMPION_HEADER);
+                for (Champion champion : champions)
+                    champion.printChampion();
+            }
+        }
+        catch (Exception e) {
+            System.out.println(response);
         }
     }
 }

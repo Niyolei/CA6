@@ -38,14 +38,18 @@ public class ItemByIdCommand implements Command {
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
 
-        Item item = getItemFromJson(response);
-
-        if (item != null) {
-            System.out.println("Item found successfully");
-            System.out.printf(ITEM_HEADER);
-            item.printItem();
+        try {
+            Item item = getItemFromJson(response);
+            if (item != null) {
+                System.out.println("Item found successfully");
+                System.out.printf(ITEM_HEADER);
+                item.printItem();
+            }
+            else
+                System.out.println(Color.RED + "Error: Item not found" + Color.RESET);
         }
-        else
-            System.out.println(Color.RED + "Error: Item not found" + Color.RESET);
+        catch (Exception e) {
+            System.out.println(response);
+        }
     }
 }

@@ -38,14 +38,19 @@ public class championByIdCommand implements Command {
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
 
-        Champion champion = getChampionFromJson(response);
+        try {
+            Champion champion = getChampionFromJson(response);
 
-        if (champion != null) {
-            System.out.println("Champion found successfully");
-            System.out.printf(CHAMPION_HEADER);
-            champion.printChampion();
+            if (champion != null) {
+                System.out.println("Champion found successfully");
+                System.out.printf(CHAMPION_HEADER);
+                champion.printChampion();
+            }
+            else
+                System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
         }
-        else
-            System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
+        catch (Exception e) {
+            System.out.println(response);
+        }
     }
 }

@@ -109,6 +109,45 @@ public class MySqlBuildDAO extends MySqlDAO implements IBuildDAO{
     }
 
     @Override
+    public Build findBuildByChampionIdAndItemId(int champId, int itemId) throws DAOexception {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Build b = null;
+
+        try {
+            con = this.getConnection();
+            String query = "SELECT * FROM build WHERE champion_id = ? AND item_id = ?";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, champId);
+            ps.setInt(2, itemId);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                String explanation = rs.getString("explanation");
+                b = new Build(champId, itemId, explanation);
+            }
+        } catch (Exception e) {
+            System.out.println("findBuildByChampionIdAndItemId() " + e.getMessage());
+        } finally {
+            try{
+                if(rs != null){
+                    rs.close();
+                }
+                if(ps != null){
+                    ps.close();
+                }
+                if(con != null){
+                    freeConnection(con);
+                }
+            } catch (Exception e){
+                System.out.println("findBuildByChampionIdAndItemId() " + e.getMessage());
+            }
+        }
+        return b;
+    }
+
+    @Override
     public boolean deleteBuild(int champId, int itemId) throws DAOexception {
         Connection con = null;
         PreparedStatement ps = null;
@@ -167,19 +206,5 @@ public class MySqlBuildDAO extends MySqlDAO implements IBuildDAO{
             }
         }
         return rowsAffected == 1;
-    }
-
-    @Override
-    public String getBuildsAsJSON() throws DAOexception {
-        List<Build> builds = findAllBuilds();
-        Gson gson = new Gson();
-        return gson.toJson(builds);
-    }
-
-    @Override
-    public String getBuildsByChampionIdAsJSON(int id) throws DAOexception {
-        List<Build> builds = findBuildsByChampionId(id);
-        Gson gson = new Gson();
-        return gson.toJson(builds);
     }
 }

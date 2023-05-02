@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.ITEM_HEADER;
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getItemsFromJson;
 
 public class AllItemsCommand implements Command {
     @Override
@@ -36,20 +37,21 @@ public class AllItemsCommand implements Command {
 
     @Override
     public void handleResponse(String response) {
-        Gson gson = new Gson();
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Type type = new TypeToken<List<Item>>(){}.getType();
-        ArrayList<Item> items = gson.fromJson(response, type);
+        try {
+            List<Item> items = getItemsFromJson(response);
 
-        if (items.size() == 0)
-            System.out.println(Color.RED + "Error: Items not found" + Color.RESET);
-        else {
-            System.out.println("Items found successfully");
-            System.out.printf(ITEM_HEADER);
-            for (Item item : items)
-                item.printItem();
+            if (items.size() == 0)
+                System.out.println(Color.RED + "Error: Items not found" + Color.RESET);
+            else {
+                System.out.println("Items found successfully");
+                System.out.printf(ITEM_HEADER);
+                for (Item item : items)
+                    item.printItem();
+            }
+        } catch (Exception e) {
+            System.out.println(response);
         }
-
 
     }
 }
