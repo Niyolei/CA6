@@ -1,54 +1,56 @@
-package com.dkit.gd2.dominikHampejs.Commands;
+package com.dkit.gd2.dominikHampejs.Commands.Champion;
 
+import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
 import com.dkit.gd2.dominikHampejs.DTO.Champion;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.CHAMPION_HEADER;
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
-public class allChampionsCommand implements Command{
+public class championByRoleCommand implements Command {
+
 
     @Override
     public String generateResponse(String[] commandParts) {
         MySqlChampionDAO championDAO = new MySqlChampionDAO();
 
         try {
-            return championDAO.findAllChampionsAsJSON();
+            return championDAO.findChampionsByRoleAsJSON(commandParts[1]);
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return "Error: Champions not found";
+        return Color.RED + "Error: Champions not found" + Color.RESET;
     }
 
     @Override
     public String generateRequest(Scanner keyboard) {
-        return ServerDetails.ALLCHAMPIONS_COMMAND;
+        printRoles();
+        String role = getChampionRoleInput(keyboard);
+        return ServerDetails.CHAMPIONBYROLE_COMMAND + ServerDetails.BREAKING_CHARACTER + role;
     }
 
     @Override
     public void handleResponse(String response) {
-        Gson gson = new Gson();
-
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Type type = new TypeToken<List<Champion>>(){}.getType();
-        ArrayList<Champion> champions = gson.fromJson(response, type);
 
-        if (champions.size() == 0)
-            System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
-        else {
+        List<Champion> champions = getChampionsFromJson(response);
+
+        if(champions != null){
             System.out.println("Champions found successfully");
             System.out.printf(CHAMPION_HEADER);
-            for (Champion champion : champions)
+            for(Champion champion : champions){
                 champion.printChampion();
+            }
         }
+        else{
+            System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
+        }
+
+
     }
 }

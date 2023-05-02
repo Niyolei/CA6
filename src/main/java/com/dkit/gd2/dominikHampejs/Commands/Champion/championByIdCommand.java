@@ -1,5 +1,6 @@
-package com.dkit.gd2.dominikHampejs.Commands;
+package com.dkit.gd2.dominikHampejs.Commands.Champion;
 
+import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
-public class championByIdCommand implements Command{
+public class championByIdCommand implements Command {
     @Override
     public String generateResponse(String[] commandParts) {
         MySqlChampionDAO championDAO = new MySqlChampionDAO();

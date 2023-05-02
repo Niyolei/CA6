@@ -8,15 +8,15 @@ import java.net.Socket;
 
 public class Server {
     public static void main(String[] args) {
-        try {
-            ServerSocket serverSocket = new ServerSocket(ServerDetails.SERVER_PORT);
+        try (ServerSocket serverSocket = new ServerSocket(ServerDetails.SERVER_PORT)){
             System.out.println("Server is listening on port " + ServerDetails.SERVER_PORT);
 
             ThreadGroup clientThreads = new ThreadGroup("Client Threads");
             clientThreads.setMaxPriority(Thread.currentThread().getPriority() - 1);
             int clientCount = 0;
+            boolean listening = true;
 
-            while (true){
+            while (listening){
                 Socket dataSocket = serverSocket.accept();
                 clientCount++;
 
@@ -25,9 +25,13 @@ public class Server {
                 ServerThread clientThread = new ServerThread(clientThreads,dataSocket.getInetAddress() + "" , dataSocket, clientCount);
                 clientThread.start();
             }
+            serverSocket.close();
         }
         catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
+        }
+        finally {
+            System.out.println("Server is shutting down");
         }
     }
 }

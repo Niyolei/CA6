@@ -1,17 +1,17 @@
-package com.dkit.gd2.dominikHampejs.Commands;
+package com.dkit.gd2.dominikHampejs.Commands.Champion;
 
+import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
 import com.dkit.gd2.dominikHampejs.DTO.Champion;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
-public class addChampionCommand implements Command{
+public class addChampionCommand implements Command {
 
     @Override
     public String generateResponse(String[] commandParts) {
@@ -39,11 +39,11 @@ public class addChampionCommand implements Command{
         double winRate = 0.0;
 
         System.out.print(Color.GREEN +  "Enter the name of the champion you wish to add: " + Color.RESET);
-        name = getChampionNameInput(keyboard);
+        name = getNameInput(keyboard);
         System.out.println(Color.GREEN +"Enter the role of the champion you wish to add: " + Color.RESET);
         role = getChampionRoleInput(keyboard);
         System.out.print(Color.GREEN + "Enter the win rate of the champion you wish to add: " + Color.RESET);
-        winRate = getChampionWinRateInput(keyboard);
+        winRate = getDoubleInput(keyboard);
 
         Champion champion = new Champion(0, name, role, winRate);
 

@@ -4,6 +4,8 @@ import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Commands.CommandFactory;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
+import com.dkit.gd2.dominikHampejs.MenuHandler.MenuFactory;
+import com.dkit.gd2.dominikHampejs.MenuHandler.SubMenu;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,20 +29,29 @@ public class Client {
             int choice = -1;
             String command;
             CommandFactory commandFactory = new CommandFactory();
+            MenuFactory menuFactory = new MenuFactory();
 
             while(choice != 0){
                 command = "";
+                String menu = "";
                 printMenu();
                 choice = getIntInput(keyboard);
 
                 switch (choice) {
                     case 0 -> command = ServerDetails.QUIT_COMMAND;
-                    case 1 -> command = ServerDetails.CHAMPIONBYID_COMMAND;
-                    case 2 -> command = ServerDetails.ALLCHAMPIONS_COMMAND;
-                    case 3 -> command = ServerDetails.ADDCHAMPION_COMMAND;
-                    case 4 -> command = ServerDetails.DELETECHAMPION_COMMAND;
+                    case 1 -> menu = ServerDetails.CHAMPION_MENU;
+                    case 2 -> menu = ServerDetails.ITEM_MENU;
                     default -> {
                         System.out.println("Not on the Menu");
+                        continue;
+                    }
+                }
+
+                if (!command.equals(ServerDetails.QUIT_COMMAND)){
+                    SubMenu subMenu = menuFactory.getMenu(menu);
+                    command = subMenu.getOption(keyboard);
+
+                    if (command.equals(ServerDetails.GO_BACK)){
                         continue;
                     }
                 }
@@ -68,12 +79,12 @@ public class Client {
     }
 
     private static void printMenu() {
-        System.out.println(Color.BLUE +"\n0. Quit");
-        System.out.println("1. Get Champion by ID");
-        System.out.println("2. Get All Champions");
-        System.out.println("3. Add Champion");
-        System.out.println("4. Delete Champion");
+        System.out.println(Color.BLUE + "\nMain Menu");
+        System.out.println("0. Quit");
+        System.out.println("1. Champion Menu");
+        System.out.println("2. Item Menu");
         System.out.print(Color.GREEN + "Enter your choice: " + Color.RESET);
     }
+
 
 }
