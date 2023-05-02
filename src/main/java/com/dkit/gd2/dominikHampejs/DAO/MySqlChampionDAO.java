@@ -206,6 +206,12 @@ public class MySqlChampionDAO extends MySqlDAO implements IChampionDAO {
         return champions;
     }
 
+    public String findChampionsByRoleAsJSON(String role) throws DAOexception{
+        List<Champion> champions = findChampionsByRole(role);
+        Gson gson = new Gson();
+        return gson.toJson(champions);
+    }
+
     @Override
     public String findAllChampionsAsJSON() throws DAOexception{
         List<Champion> champions = findAllChampions();

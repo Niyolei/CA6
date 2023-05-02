@@ -1,5 +1,6 @@
-package com.dkit.gd2.dominikHampejs.Commands;
+package com.dkit.gd2.dominikHampejs.Commands.Champion;
 
+import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.*;
 
-public class championByIdCommand implements Command{
+public class championByIdCommand implements Command {
     @Override
     public String generateResponse(String[] commandParts) {
         MySqlChampionDAO championDAO = new MySqlChampionDAO();
@@ -37,14 +38,19 @@ public class championByIdCommand implements Command{
     public void handleResponse(String response) {
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
 
-        Champion champion = getChampionFromJson(response);
+        try {
+            Champion champion = getChampionFromJson(response);
 
-        if (champion != null) {
-            System.out.println("Champion found successfully");
-            System.out.printf(CHAMPION_HEADER);
-            champion.printChampion();
+            if (champion != null) {
+                System.out.println("Champion found successfully");
+                System.out.printf(CHAMPION_HEADER);
+                champion.printChampion();
+            }
+            else
+                System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
         }
-        else
-            System.out.println(Color.RED + "Error: Champion not found" + Color.RESET);
+        catch (Exception e) {
+            System.out.println(response);
+        }
     }
 }

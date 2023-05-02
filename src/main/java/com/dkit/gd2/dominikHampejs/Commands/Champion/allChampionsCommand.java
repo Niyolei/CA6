@@ -1,5 +1,6 @@
-package com.dkit.gd2.dominikHampejs.Commands;
+package com.dkit.gd2.dominikHampejs.Commands.Champion;
 
+import com.dkit.gd2.dominikHampejs.Commands.Command;
 import com.dkit.gd2.dominikHampejs.Core.Color;
 import com.dkit.gd2.dominikHampejs.Core.ServerDetails;
 import com.dkit.gd2.dominikHampejs.DAO.MySqlChampionDAO;
@@ -13,8 +14,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.CHAMPION_HEADER;
+import static com.dkit.gd2.dominikHampejs.Core.ServerUtility.getChampionsFromJson;
 
-public class allChampionsCommand implements Command{
+public class allChampionsCommand implements Command {
 
     @Override
     public String generateResponse(String[] commandParts) {
@@ -36,19 +38,21 @@ public class allChampionsCommand implements Command{
 
     @Override
     public void handleResponse(String response) {
-        Gson gson = new Gson();
-
         System.out.println(Color.PURPLE + "\nServer response:" + Color.RESET);
-        Type type = new TypeToken<List<Champion>>(){}.getType();
-        ArrayList<Champion> champions = gson.fromJson(response, type);
+        try {
+            List<Champion> champions = getChampionsFromJson(response);
 
-        if (champions.size() == 0)
-            System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
-        else {
-            System.out.println("Champions found successfully");
-            System.out.printf(CHAMPION_HEADER);
-            for (Champion champion : champions)
-                champion.printChampion();
+            if (champions.size() == 0)
+                System.out.println(Color.RED + "Error: Champions not found" + Color.RESET);
+            else {
+                System.out.println("Champions found successfully");
+                System.out.printf(CHAMPION_HEADER);
+                for (Champion champion : champions)
+                    champion.printChampion();
+            }
+        }
+        catch (Exception e) {
+            System.out.println(response);
         }
     }
 }

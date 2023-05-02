@@ -13,4 +13,5 @@ public interface IChampionDAO {
     List<Champion> findChampionsByRole(String role) throws DAOexception;
     String findAllChampionsAsJSON() throws DAOexception;
     String findChampionByIdAsJSON(int id) throws DAOexception;
+    String findChampionsByRoleAsJSON(String role) throws DAOexception;
 }
