@@ -5,32 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74624b-b784-4d44-be5b-d3b55f2fb56c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Build/AddBuildCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Build/AllBuildsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Build/BuildsByChampionIdCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Build/DeleteBuildCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/DetailedBuild.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/MenuHandler/BuildMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/MySqlBuildTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/MySqlChampionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/MySqlItemTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/addChampionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/addChampionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/allChampionsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/allChampionsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/championByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/championByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/championByRoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/championByRoleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/deleteChampionCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Champion/deleteChampionCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/AllItemsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/AllItemsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/ItemByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/ItemByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/ItemByTypeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/ItemByTypeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/addItemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/addItemCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/deleteItemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Commands/Item/deleteItemCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/Core/ServerUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/IBuildDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlBuildDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DAO/MySqlBuildDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Build.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/DTO/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/MenuHandler/MenuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dkit/gd2/dominikHampejs/MenuHandler/MenuFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,65 +43,109 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/domin/OneDrive/Desktop/Programming/Project_CA6&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "C:/Users/domin/OneDrive/Desktop/Programming/Project_CA6/target/generated-test-sources/test-annotations",
+    "last_opened_file_path": "C:/Users/domin/OneDrive/Desktop/Programming/OOP23",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dkit.gd2.dominikHampejs.Commands" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.App" />
+  <component name="RunManager" selected="JUnit.MySqlBuildTest.FindAllBuildsTest">
+    <configuration name="MySqlBuildTest.FindAllBuildsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project_CA6" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.Core.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MySqlBuildTest" />
+      <option name="METHOD_NAME" value="FindAllBuildsTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.Client.Client" />
+    <configuration name="MySqlItemTest.DeleteItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project_CA6" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.Client.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MySqlItemTest" />
+      <option name="METHOD_NAME" value="DeleteItemTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dkit.gd2.dominikHampejs.Server.Server" />
+    <configuration name="MySqlItemTest.GetItemByIdAsJsonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project_CA6" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dkit.gd2.dominikHampejs.Server.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MySqlItemTest" />
+      <option name="METHOD_NAME" value="GetItemByIdAsJsonTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlItemTest.GetItemByTypeAsJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_CA6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MySqlItemTest" />
+      <option name="METHOD_NAME" value="GetItemByTypeAsJson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlItemTest.InsertItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project_CA6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.MySqlItemTest" />
+      <option name="METHOD_NAME" value="InsertItemTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.MySqlBuildTest.FindAllBuildsTest" />
+        <item itemvalue="JUnit.MySqlItemTest.DeleteItemTest" />
+        <item itemvalue="JUnit.MySqlItemTest.InsertItemTest" />
+        <item itemvalue="JUnit.MySqlItemTest.GetItemByTypeAsJson" />
+        <item itemvalue="JUnit.MySqlItemTest.GetItemByIdAsJsonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +168,10 @@
           <line>72</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
